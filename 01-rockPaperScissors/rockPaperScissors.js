@@ -17,34 +17,20 @@
 *
 */
 
-var rockPaperScissors = function(num) {
+var rockPaperScissors = function() {
   // TODO: your solution here
   var rps = ["rook", "paper", "scissors"];
 
   var result = [];
-
   var collect = [];
-  //   for (var i = 0; i < num; i++) {
-  //     collect.push(rps[i]);
-  //     for (var j = 0; j < num; j++) {
-  //       collect.push(rps[j]);
-  //       for (var k = 0; k < num; k++) {
-  //         collect.push(rps[k]);
-  //       }
-  //     }
-  //   }
-  result.push(collect);
-  //   for (var i = 0; i < num; i++) {
-  //     let maker = [];
 
-  //     for (var j = 0; j < num; j++) {
-  //       for (var k = 0; k < num; k++) {
-  //         maker.push(rPs[i]);
-  //         maker.push(rPs[j]);
-  //         maker.push(rPs[k]);
-  //         result.push(maker);
-  //       }
-  //     }
-  //   }
+  for (var i = 0; i < rps.length; i++) {
+    for (var j = 0; j < rps.length; j++) {
+      for (var k = 0; k < rps.length; k++) {
+        collect = [rps[i], rps[j], rps[k]];
+        result.push(collect);
+      }
+    }
+  }
   return result;
 };
