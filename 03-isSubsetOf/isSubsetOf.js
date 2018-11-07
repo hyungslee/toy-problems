@@ -22,6 +22,31 @@
  * including non-strings.
 */
 
-Array.prototype.isSubsetOf = function(array){
+Array.prototype.isSubsetOf = function(array) {
   // Your code here
+  // var resultNum = 0;
+  // for (var i = 0; i < this.arr.length; i++) {
+  //   console.log(this.arr.length);
+  //   for (var j = 0; j < this.arr.length; j++) {
+  //     if (this.arr[i] === array[j]) {
+  //       console.log(this.arr[i]);
+  //       resultNum++;
+  //     }
+  //   }
+  // }
+  // if (resultNum === this.arr.length) {
+  //   return true;
+  // }
+  // return false;
+
+  var subObj = {};
+  for (var i = 0; i < this.length; i++) {
+    subObj[this[i]] = this[i];
+  }
+  for (var key in subObj) {
+    if (arr.includes(subObj[key]) !== true) {
+      return false;
+    }
+  }
+  return true;
 };
