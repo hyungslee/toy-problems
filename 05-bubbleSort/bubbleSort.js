@@ -1,4 +1,4 @@
-/*jshint expr:true*/
+/* jshint expr:true */
 
 /*
  * Bubble sort is the most basic sorting algorithm in all of Computer
@@ -30,12 +30,13 @@
  *
 */
 
+// test ///
+
 // Introduce i into the global scope so we can test function efficiency
-var i;
+var i
 
 // Feel free to add helper functions if needed.
 
-
-var bubbleSort = function(array) {
+var bubbleSort = function (array) {
   // Your code here.
-};
+}
