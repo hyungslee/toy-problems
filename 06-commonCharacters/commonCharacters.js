@@ -10,6 +10,20 @@
  * Extra credit: Extend your function to handle more than two input strings.
  */
 
-var commonCharacters = function(string1, string2) {
+var commonCharacters = function (string1, string2) {
   // TODO: Your code here!
-};
+  var result = ''
+  var stringOne = string1.split('')
+  var stringTwo = string2.split('')
+
+  // console.log(stringOne, stringTwo)
+  for (var i = 0; i < stringOne.length; i++) {
+    for (var j = 0; j < stringTwo.length; j++) {
+      if (stringOne[i] === stringTwo[j]) {
+        result += stringOne[i]
+      }
+    }
+  }
+
+  return result
+}
