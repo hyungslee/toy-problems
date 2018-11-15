@@ -10,20 +10,39 @@
  * Extra credit: Extend your function to handle more than two input strings.
  */
 
-var commonCharacters = function (string1, string2) {
+var commonCharacters = function (...args) {
   // TODO: Your code here!
-  var result = ''
-  var stringOne = string1.split('')
-  var stringTwo = string2.split('')
+  // var args = Array.prototype.slice.call(arguments)
+
+  // var stringOne = string1.split('')
+  // var stringTwo = string2.split('')
 
   // console.log(stringOne, stringTwo)
-  for (var i = 0; i < stringOne.length; i++) {
-    for (var j = 0; j < stringTwo.length; j++) {
-      if (stringOne[i] === stringTwo[j]) {
-        result += stringOne[i]
+  // for (var i = 0; i < stringOne.length; i++) {
+  //   for (var j = 0; j < stringTwo.length; j++) {
+  //     if (stringOne[i] === stringTwo[j]) {
+  //       result += stringOne[i]
+  //     }
+  //   }
+  // }
+  var result = args[0]
+  var reresult = ''
+
+  for (var i = 1; i < args.length; i++) {
+    var firstArgs = result.split('')
+    var secondArgs = args[i].split('')
+    for (var j = 0; j < firstArgs.length; j++) {
+      for (var k = 0; k < secondArgs.length; k++) {
+        if (firstArgs[j] === secondArgs[k]) {
+          reresult += firstArgs[j]
+          result = reresult
+          reresult = ''
+        }
       }
     }
   }
+  console.log(reresult)
 
   return result
 }
+commonCharacters('qwerty', 'wertyu', 'ertyui', 'rtyui', 'tyuiop', 'yuiopa')
