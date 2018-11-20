@@ -11,5 +11,20 @@
   * don't worry about handling cyclical object structures.
   *
   */
-var deepEquals = function(apple, orange){
-};
+var deepEquals = function (apple, orange) {
+  if (apple === orange) {
+    return true
+  }
+  return false
+
+  // for (var key in apple) {
+  //   console.log(apple)
+  //   console.log(orange)
+  //   if (apple[key] !== orange[key]) {
+  //     return false
+  //   }
+  //   return true
+  // }
+
+  // return JSON.stringify(apple) === JSON.stringify(orange)
+}
