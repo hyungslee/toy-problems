@@ -16,6 +16,37 @@
  */
 
 var rotatedArraySearch = function (rotated, target) {
-  // Your code here:
-};
+  // // Your code here:
+  // for(var i =0; i < rotated.length; i++){
+  //   if(rotated[i] === target){
+  //     return i
+  //   }
 
+  // }
+  // return null
+
+  var start = 0
+  var end = rotated.length - 1
+
+  while (start <= end) {
+    var mid = Math.floor((start + end) / 2)
+    if (rotated[mid] === target) {
+      return mid
+    }
+
+    if (rotated[start] <= rotated[mid]) {
+      if (rotated[start] <= target && target < rotated[mid]) {
+        end = mid - 1
+      } else {
+        start = mid + 1
+      }
+    } else {
+      if (rotated[mid] < target && target <= rotated[end]) {
+        start = mid + 1
+      } else {
+        end = mid - 1
+      }
+    }
+  }
+  return null
+}
