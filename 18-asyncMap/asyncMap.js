@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* Implement the function asyncMap:
  *
@@ -38,6 +38,18 @@
  *
  */
 
+var asyncMap = function(tasks, callback) {
+  let results = [];
+  let resultsCount = 0;
 
-var asyncMap = function(tasks, callback){
+  tasks.forEach((asyncFunc, index) => {
+    asyncFunc(data => {
+      results[index] = data;
+      resultsCount++;
+
+      if (resultsCount === tasks.length) {
+        callback(results);
+      }
+    });
+  });
 };
