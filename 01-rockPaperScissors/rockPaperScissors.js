@@ -17,40 +17,19 @@
 *
 */
 
-var rockPaperScissors = function() {
-  // TODO: your solution here
-  // var rps = ["rook", "paper", "scissors"];
-
-  // var result = [];
-  // var collect = [];
-
-  // for (var i = 0; i < rps.length; i++) {
-  //   for (var j = 0; j < rps.length; j++) {
-  //     for (var k = 0; k < rps.length; k++) {
-  //       collect = [rps[i], rps[j], rps[k]];
-  //       result.push(collect);
-  //     }
-  //   }
-  // }
-  // return result;
-
-  round = round || 3
-  var result = []
-
-  var rps = ["rook", "paper", "scissors"];
-
-  var combos = function(roundsToGo, playedSoFar) {
-    if( roundsToGo === 0 ){
-      result.push( playedSoFar );
-      return;
-    }
-
-    for( var i = 0; i < plays.length; i++ ){
-      var currentPlay = plays[i];
-      combos( roundsToGo-1, playedSoFar.concat(currentPlay) );
+var rockPaperScissors = function(rounds) {
+  rounds = rounds || 3;
+  var result = [];
+  var plays = ["rock", "paper", "scissors"];
+  var getResult = function(playedSoFar, roundsLeft) {
+    if (roundsLeft === 0) {
+      result.push(playedSoFar);
+    } else {
+      for (var i = 0; i < plays.length; i++) {
+        getResult(playedSoFar.concat(plays[i]), roundsLeft - 1);
+      }
     }
   };
-  combos( round, [] );
-
+  getResult([], rounds);
   return result;
 };
