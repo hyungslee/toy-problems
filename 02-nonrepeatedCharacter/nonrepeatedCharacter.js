@@ -9,7 +9,7 @@
 var firstNonRepeatedCharacter = function(string) {
   // TODO: your solution here
   var newString = string.split("").sort();
-  var result = null;
+  var output = null;
   for (var i = 1; i < newString.length - 1; i++) {
     if (
       newString[i - 1] !== newString[i] &&
@@ -18,7 +18,7 @@ var firstNonRepeatedCharacter = function(string) {
       return newString[i];
     }
   }
-  return result;
+  return output;
   // var splitString = string.split("");
   // var sortString = splitString.sort();
   // console.log(sortString);
