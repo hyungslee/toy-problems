@@ -20,9 +20,12 @@
  *
  */
 
-var nthFibonacci = function (n) {
-  // TODO: implement me!
+var nthFibonacci = function(n) {
+  var Fib = [0, 1];
+
+  for (var i = 2; i <= n; i++) {
+    Fib[i] = Fib[i - 2] + Fib[i - 1];
+  }
+
+  return Fib[n];
 };
-
-
-
