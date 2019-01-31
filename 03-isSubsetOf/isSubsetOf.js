@@ -15,40 +15,23 @@
  *
  * See http://en.wikipedia.org/wiki/Subset for more on the definition of a
  * subset.
-*/
+ */
 
 /*
  * Extra credit: Make the method work for arrays that contain any value,
  * including non-strings.
-*/
+ */
 
-Array.prototype.isSubsetOf = function (array) {
-  // Your code here
+Array.prototype.isSubsetOf = function(array) {
+  var Obj = {};
 
-  // var resultNum = 0;
-  // for (var i = 0; i < this.arr.length; i++) {
-  //   console.log(this.arr.length);
-  //   for (var j = 0; j < this.arr.length; j++) {
-  //     if (this.arr[i] === array[j]) {
-  //       console.log(this.arr[i]);
-  //       resultNum++;
-  //     }
-  //   }
-  // }
-  // if (resultNum === this.arr.length) {
-  //   return true;
-  // }
-  // return false;
-
-  var Obj = {}
-  // console.log(this)
   for (var i = 0; i < this.length; i++) {
-    Obj[this[i]] = this[i]
+    Obj[this[i]] = this[i];
   }
   for (var key in Obj) {
     if (array.includes(Obj[key]) !== true) {
-      return false
+      return false;
     }
   }
-  return true
-}
+  return true;
+};
