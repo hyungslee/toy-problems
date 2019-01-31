@@ -19,18 +19,4 @@
 
 var rockPaperScissors = function() {
   // TODO: your solution here
-  var rps = ["rook", "paper", "scissors"];
-
-  var result = [];
-  var collect = [];
-
-  for (var i = 0; i < rps.length; i++) {
-    for (var j = 0; j < rps.length; j++) {
-      for (var k = 0; k < rps.length; k++) {
-        collect = [rps[i], rps[j], rps[k]];
-        result.push(collect);
-      }
-    }
-  }
-  return result;
 };
