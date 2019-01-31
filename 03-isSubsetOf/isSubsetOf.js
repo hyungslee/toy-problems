@@ -23,13 +23,13 @@
  */
 
 Array.prototype.isSubsetOf = function(array) {
-  var Obj = {};
+  var obj = {};
 
   for (var i = 0; i < this.length; i++) {
-    Obj[this[i]] = this[i];
+    obj[this[i]] = this[i];
   }
-  for (var key in Obj) {
-    if (array.includes(Obj[key]) !== true) {
+  for (var key in obj) {
+    if (array.includes(obj[key]) !== true) {
       return false;
     }
   }
