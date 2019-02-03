@@ -22,32 +22,32 @@
  * Moar credits: Do you need to consider every element every time you iterate
  * through the array? Make it happen, boss. Again: Has the time complexity of
  * your algorithm changed?
-*/
+ */
 
 /*
  * Example usage:
  * bubbleSort([2, 1, 3]); // yields [1, 2, 3]
  *
-*/
+ */
 
 // test ///
 
 // Introduce i into the global scope so we can test function efficiency
-var i
+var i;
 
 // Feel free to add helper functions if needed.
 
-var bubbleSort = function (array) {
+var bubbleSort = function(array) {
   // Your code here.
-  cacheNum = 0
+  num = 0;
   for (var i = 0; i < array.length; i++) {
     for (var j = 0; j < array.length - (i + 1); j++) {
       if (array[j] > array[j + 1]) {
-        cacheNum = array[j]
-        array[j] = array[j + 1]
-        array[j + 1] = cacheNum
+        num = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = num;
       }
     }
   }
-  return array
-}
+  return array;
+};

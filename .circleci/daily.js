@@ -1,25 +1,25 @@
-Number.prototype.padLeft = function () {
+Number.prototype.padLeft = function() {
   if (this < 10) {
-    return '0' + String(this)
+    return "0" + String(this);
   } else {
-    return String(this)
+    return String(this);
   }
-}
+};
 
-Date.prototype.format = function () {
-  var yyyy = this.getFullYear()
-  var month = (this.getMonth() + 1).padLeft()
-  var dd = this.getDate().padLeft()
-  var HH = this.getHours().padLeft()
-  var mm = this.getMinutes().padLeft()
-  var ss = this.getSeconds().padLeft()
+Date.prototype.format = function() {
+  var yyyy = this.getFullYear();
+  var month = (this.getMonth() + 1).padLeft();
+  var dd = this.getDate().padLeft();
+  var HH = this.getHours().padLeft();
+  var mm = this.getMinutes().padLeft();
+  var ss = this.getSeconds().padLeft();
 
-  var format = [yyyy, month, dd].join('-')
-  return format
-}
+  var format = [yyyy, month, dd].join("-");
+  return format;
+};
 
 var map = {
-  '2018-11-13': '05'
+  "2019-02-04": "05"
 
   // '2018-09-27': '01',
   // '2018-09-28': '02',
@@ -76,8 +76,8 @@ var map = {
   // '2018-12-05': '43',
   // '2018-12-06': '44',
   // '2018-12-07': '45'
-}
+};
 
-var today = new Date()
-today = today.format()
-console.log(map[today])
+var today = new Date();
+today = today.format();
+console.log(map[today]);
