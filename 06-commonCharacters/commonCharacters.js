@@ -10,39 +10,20 @@
  * Extra credit: Extend your function to handle more than two input strings.
  */
 
-var commonCharacters = function (...args) {
-  // TODO: Your code here!
-  // var args = Array.prototype.slice.call(arguments)
-
-  // var stringOne = string1.split('')
-  // var stringTwo = string2.split('')
-
-  // console.log(stringOne, stringTwo)
-  // for (var i = 0; i < stringOne.length; i++) {
-  //   for (var j = 0; j < stringTwo.length; j++) {
-  //     if (stringOne[i] === stringTwo[j]) {
-  //       result += stringOne[i]
-  //     }
-  //   }
-  // }
-  var result = args[0]
-  var reresult = ''
-
-  for (var i = 1; i < args.length; i++) {
-    var firstArgs = result.split('')
-    var secondArgs = args[i].split('')
-    for (var j = 0; j < firstArgs.length; j++) {
-      for (var k = 0; k < secondArgs.length; k++) {
-        if (firstArgs[j] === secondArgs[k]) {
-          reresult += firstArgs[j]
-          result = reresult
-          reresult = ''
-        }
-      }
+var commonCharacters = function(string1, string2) {
+  var string2Chars = {};
+  var output = "";
+  for (var letter of string2) {
+    if (letter !== " ") {
+      string2Chars[letter] = true;
     }
   }
-  console.log(reresult)
-
-  return result
-}
-commonCharacters('qwerty', 'wertyu', 'ertyui', 'rtyui', 'tyuiop', 'yuiopa')
+  for (var letter of string1) {
+    if (string2Chars[letter]) {
+      output += letter;
+      string2Chars[letter] = false;
+    }
+  }
+  return output;
+};
+commonCharacters("qwerty", "wertyu", "ertyui", "rtyui", "tyuiop", "yuiopa");
