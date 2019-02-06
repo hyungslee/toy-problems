@@ -10,7 +10,7 @@
  * Extra credit: Extend your function to handle more than two input strings.
  */
 
-var commonCharacters = function(string1, string2) {
+var commonCharacters = function(string1, string2, ...arg) {
   var string2Chars = {};
   var output = "";
   for (var letter of string2) {
