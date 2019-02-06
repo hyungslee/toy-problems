@@ -21,11 +21,11 @@
  */
 
 var nthFibonacci = function(n) {
-  var Fib = [0, 1];
+  var fib = [0, 1];
 
   for (var i = 2; i <= n; i++) {
-    Fib[i] = Fib[i - 2] + Fib[i - 1];
+    fib[i] = fib[i - 2] + fib[i - 1];
   }
 
-  return Fib[n];
+  return fib[n];
 };
