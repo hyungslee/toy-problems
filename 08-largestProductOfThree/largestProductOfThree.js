@@ -7,28 +7,28 @@
  * Extra credit: Make your function handle negative numbers.
  */
 
-var largestProductOfThree = function (array) {
+var largestProductOfThree = function(array) {
   // TODO: everything
-  var resultArr = []
+  var result = [];
 
-  var sortArr = array.sort(function (a, b) {
-    return a - b
-  })
+  var sortArr = array.sort(function(a, b) {
+    return a - b;
+  });
 
-  resultArr.push(sortArr[0] * sortArr[1] * sortArr[2])
-  resultArr.push(sortArr[0] * sortArr[1] * sortArr[sortArr.length - 1])
-  resultArr.push(
+  result.push(sortArr[0] * sortArr[1] * sortArr[2]);
+  result.push(sortArr[0] * sortArr[1] * sortArr[sortArr.length - 1]);
+  result.push(
     sortArr[0] * sortArr[sortArr.length - 2] * sortArr[sortArr.length - 1]
-  )
-  resultArr.push(
+  );
+  result.push(
     sortArr[sortArr.length - 3] *
       sortArr[sortArr.length - 2] *
       sortArr[sortArr.length - 1]
-  )
+  );
 
-  var result = resultArr.sort(function (a, b) {
-    return b - a
-  })
+  var result = result.sort(function(a, b) {
+    return b - a;
+  });
 
-  return result[0]
-}
+  return result[0];
+};
