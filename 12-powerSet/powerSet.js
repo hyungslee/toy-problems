@@ -17,20 +17,35 @@
  * -> ["", "j", "ju", "jm", "jp", "jmu", "jmp", "jpu", "jmpu", "u", "m", "p", "mu", "mp", "pu", "mpu"]
  */
 
-var powerSet = function (str) {
-  var splitStr = str.split('')
-  var result = ['']
+var powerSet = function(str) {
+  var set = [];
+  var hash = {};
+  if (!str) str = "";
+  str = str.split("").sort();
 
-  for (var i = 0; i < splitStr.length; i++) {
-    result.push(splitStr[i])
-  }
-  var len = result.length
-  for (var i = 1; i < len; i++) {
-    for (var j = i + 1; j < len; j++) {
-      result.push(result[i] + result[j])
+  for (var i = 1; i < str.length; i++) {
+    if (str[i - 1] === str[i]) {
+      str.splice(i, 1);
+      i--;
     }
   }
-  console.log(result)
 
-  return result
-}
+  function recurse(strSet) {
+    var joined = strSet.join("");
+
+    if (hash[joined]) return;
+    hash[joined] = true;
+    set.push(joined);
+
+    if (strSet.length === 1) return;
+
+    for (var i = 0; i < strSet.length; i++) {
+      var subSet = strSet.slice(0, i).concat(strSet.slice(i + 1));
+      recurse(subSet);
+    }
+  }
+  recurse(str);
+  set.push("");
+
+  return set;
+};
