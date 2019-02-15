@@ -33,20 +33,20 @@
 
 // var welcome = compose(greet, exclaim)
 
-var compose = function () {
-  var funcs = Array.prototype.slice.call(arguments)
-  return function (a) {
-    return funcs.reduceRight(function (param, func) {
-      return func(param)
-    }, a)
-  }
-}
+var compose = function() {
+  var func = Array.prototype.slice.call(arguments);
+  return function(a) {
+    return func.reduceRight(function(param, func) {
+      return func(param);
+    }, a);
+  };
+};
 
-var pipe = function () {
-  var funcs = Array.prototype.slice.call(arguments)
-  return function (arg) {
-    return funcs.reduce(function (item, func) {
-      return func(item)
-    }, arg)
-  }
-}
+var pipe = function() {
+  var func = Array.prototype.slice.call(arguments);
+  return function(arg) {
+    return func.reduce(function(item, func) {
+      return func(item);
+    }, arg);
+  };
+};
