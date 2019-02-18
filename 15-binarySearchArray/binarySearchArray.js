@@ -14,7 +14,7 @@ var binarySearch = function(array, target) {
   let maxidx = array.length - 1;
 
   while (minidx <= maxidx) {
-    var midIdx = Math.floor((minidx + maxidx) / 2);
+    let midIdx = Math.floor((minidx + maxidx) / 2);
     if (target === array[midIdx]) {
       return midIdx;
     }
