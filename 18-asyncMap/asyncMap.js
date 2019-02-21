@@ -39,16 +39,16 @@
  */
 
 var asyncMap = function(tasks, callback) {
-  let results = [];
-  let resultsCount = 0;
+  let result = [];
+  let resultCount = 0;
 
   tasks.forEach((asyncFunc, index) => {
     asyncFunc(data => {
-      results[index] = data;
-      resultsCount++;
+      result[index] = data;
+      resultCount++;
 
-      if (resultsCount === tasks.length) {
-        callback(results);
+      if (resultCount === tasks.length) {
+        callback(result);
       }
     });
   });
