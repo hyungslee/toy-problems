@@ -13,19 +13,33 @@
  */
 
 var toFraction = function(number) {
-  var result = "";
-  var count = 0;
-  var a, b;
-
-  if (!Number.isInteger(number)) {
-    count = count + 1;
-    number = number * 10;
-    toFraction(number);
-  } else {
-    a = number;
-    b = Math.pow(10, count);
-    result = `${a}/${b}`;
+  let numArr = Math.abs(number)
+    .toString()
+    .split(".");
+  if (numArr.length === 1) {
+    return number + "/1";
   }
+  numArr[2] = 10 ** numArr[1].length;
+  numArr = numArr.map(str => Number(str));
 
-  return result;
+  const factor = function(num, denom) {
+    let common;
+    if (denom % num === 0) {
+      common = num;
+    } else {
+      let i = Math.ceil(num / 2);
+      while (!common) {
+        common = num % i === 0 && denom % i === 0 ? i : null;
+        i--;
+      }
+    }
+    return common === 1 ? [num, denom] : factor(num / common, denom / common);
+  };
+
+  let reduced = factor(numArr[1], numArr[2]);
+  let answer =
+    numArr[0] > 0
+      ? `${numArr[0] * reduced[1] + reduced[0]}/${reduced[1]}`
+      : `${reduced[0]}/${reduced[1]}`;
+  return number > 0 ? answer : "-" + answer;
 };
